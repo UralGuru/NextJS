@@ -1,0 +1,13 @@
+.part{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.answers{
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    align-content: space-between;
+    justify-content: center;
+    gap: 24px;
+}
