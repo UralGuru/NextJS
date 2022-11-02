@@ -1,0 +1,48 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: black;
+  font-size: 18px;
+  background: #ffffff;
+  border-radius: 3px;
+  width: 400px;
+  height: 50px;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+
+  .radio_button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 0 14px;
+    border: 3px solid #808080;
+  }
+
+  .radio_button_checked{
+    border: 3px solid #0debdb;
+    background: radial-gradient(circle closest-side, #0debdb 6px, white 5px, white 8px);
+  }
+
+  .radio_button_disabled{
+      color: #bdbdbd;
+      &.radio_button{
+          border: 3px solid #e0e0e0;
+      }
+  }
+
+  .radio_button_disabled.radio_button_checked{
+    border: 3px solid #e0e0e0;
+    background: radial-gradient(circle closest-side, #e0e0e0 6px, white 5px, white 8px);
+  }
+
+  &:hover{
+    :not(.radio_button_disabled).radio_button{
+      border: 3px solid #00ead9;
+    }
+  }
+}
+
+
+
+
+
