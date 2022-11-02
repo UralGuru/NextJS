@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+<<<<<<< HEAD
 import Question from "./pages/questionPage/question";
 import {ImageConfigContext} from "next/dist/shared/lib/image-config-context";
 
@@ -51,3 +52,25 @@ export default function Home() {
         </div>
     )
 }
+=======
+import Question from "./test/[question]";
+import test from './../data/questions'
+
+
+export default function Home() {
+    return (<div className={styles.appWrapper}>
+        <Head>
+            <title>Create Next App</title>
+            <link rel="icon" href="/favicon.ico"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+        </Head>
+
+            <h1>
+                HomePage
+            </h1>
+
+    </div>
+    )};
+>>>>>>> 097ae739746fa5237783269358b3cedbed084cdc

@@ -1,5 +1,6 @@
 .appWrapper {
   display: flex;
+<<<<<<< HEAD
   width: 100%;
 }
 .navbar{
@@ -63,4 +64,10 @@
 .mainContent{
   width: 80%;
   border: 1px solid #5700ff;
+=======
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 50px;
+>>>>>>> 097ae739746fa5237783269358b3cedbed084cdc
 }
