@@ -1,4 +1,4 @@
-import RadioBox from "../../components/buttons/radioButton/RadioBox";
+import RadioBox from "../../../components/buttons/radioButton/RadioBox";
 import {useRouter} from "next/router";
 import s from './question.module.css';
 
