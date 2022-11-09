@@ -30,3 +30,15 @@
     align-self: center;
     text-align: center;
 }
+
+.box:hover{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 1px;
+    align-self: center;
+    text-align: center;
+    background: rgba(69, 189, 255, 0.15);
+    border-radius: 5px;
+}

@@ -10,9 +10,9 @@ export const questionSlice = createSlice({
     initialState,
     reducers: {
         setChecked:(state, actions)=>{
-            const toggleAnswCheckedID = state.questions[0].answers.find((answ)=>answ.id===actions.payload);
+            const toggleAnswCheckedID = state.questions[parseInt(actions.payload/10)-1].answers.find((answ)=>answ.id===actions.payload);
             toggleAnswCheckedID.checked = !toggleAnswCheckedID.checked;
-            for (let e of state.questions[0].answers){
+            for (let e of state.questions[parseInt(actions.payload/10)-1].answers){
                 if (e !== toggleAnswCheckedID) e.checked = false
             }
         },
@@ -20,7 +20,6 @@ export const questionSlice = createSlice({
             // state.time = action.payload;
         },
         decrement: (state, action) => {
-            // console.log(current(state.questions[action.payload].timeLimit))
             (state.questions[action.payload].timeLimit>=1)
                 ? (state.questions[action.payload].timeLimit -= 1)
                 :  (state.questions[action.payload].answers.map((d)=> d.disabled=true))
