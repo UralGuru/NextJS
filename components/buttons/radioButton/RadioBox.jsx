@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from "./radio.module.scss";
 
-const RadioBox = ({checked, disabled, text}) => {
+const RadioBox = ({text, checked=false, disabled=false}) => {
     const [val, setVal] = useState(checked);
 
     return <>

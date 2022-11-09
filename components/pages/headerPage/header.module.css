@@ -1,0 +1,10 @@
+.header {
+    border-bottom: 1px solid #E0E0E0;
+    display: flex;
+    justify-content: space-between;
+    width: 85em;
+    padding: 10px 35px;
+}
+.headerLeft{
+    display: flex;
+}
