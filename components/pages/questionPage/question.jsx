@@ -22,11 +22,8 @@ function Question({question}) {
 
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            dispatch(decrement(question.id-1));
-        }, 1000);
-        return ()=> clearInterval(interval)
-    }, []);
+        const interval = setInterval(() => {dispatch(decrement(question.id-1));}, 1000);
+        return ()=> clearInterval(interval)}, []);
 
 
     return <div className={s.mainContent}>

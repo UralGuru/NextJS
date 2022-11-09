@@ -21,7 +21,9 @@ export const questionSlice = createSlice({
         },
         decrement: (state, action) => {
             // console.log(current(state.questions[action.payload].timeLimit))
-            if(state.questions[action.payload].timeLimit>=1) state.questions[action.payload].timeLimit -= 1
+            (state.questions[action.payload].timeLimit>=1)
+                ? (state.questions[action.payload].timeLimit -= 1)
+                :  (state.questions[action.payload].answers.map((d)=> d.disabled=true))
         },
     }
 })
