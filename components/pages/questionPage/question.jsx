@@ -1,7 +1,8 @@
 import RadioBox from "../../buttons/radioButton/RadioBox";
 import s from './question.module.css';
 import {useSelector, useDispatch} from 'react-redux';
-import {decrement, increment} from '../../../slices/timerSlices';
+// import {decrement, setTime} from '../../../slices/timerSlices';
+import {setChecked, setTime, decrement} from "../../../slices/questionSlices";
 import {useEffect} from "react";
 
 function convertSecToMinSec(sec) {
@@ -12,14 +13,17 @@ function convertSecToMinSec(sec) {
     return `${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`;
 }
 
-function Question() {
-    const totalSeconds = useSelector((state) => state.timer.time);
+function Question({question}) {
+    const totalSeconds = useSelector((state) => state.test.questions[question.id-1].timeLimit);
     const time = convertSecToMinSec(totalSeconds);
     const dispatch = useDispatch();
 
+    // console.log(totalSeconds)
+
+
     useEffect(() => {
         const interval = setInterval(() => {
-            dispatch(decrement());
+            dispatch(decrement(question.id-1));
         }, 1000);
         return ()=> clearInterval(interval)
     }, []);
@@ -28,13 +32,16 @@ function Question() {
     return <div className={s.mainContent}>
         <div className={s.timer}>{time}</div>
 
-        <div className={s.question}>Какой автор имел более 50 псевдонимов?</div>
+        <div className={s.question}>{question.questionTitle}</div>
 
         <div className={s.answers}>
-            <RadioBox text={'Сергей Есенин'}/>
-            <RadioBox text={'Антон чехов'}/>
-            <RadioBox text={'Лев Толстой'}/>
-            <RadioBox text={'Владимир Маяковский'}/>
+            {question.answers?.map((a)=>(<div key={a.id} >
+                <RadioBox text={a.answerTitle}
+                          id={a.id}
+                          checked={a.checked}
+                          setChecked={setChecked}
+                          disabled={a.disabled}/></div>
+            ))}
         </div>
     </div>
 }

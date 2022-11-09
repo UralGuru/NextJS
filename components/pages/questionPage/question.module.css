@@ -1,4 +1,4 @@
-.mainContent{
+.mainContent {
     width: 80%;
     height: 60vh;
     margin-top: 50px;
@@ -9,7 +9,7 @@
     justify-content: space-around;
 }
 
-.timer{
+.timer {
     width: 120px;
     height: 120px;
     border: 1px solid #00EAD9;
@@ -20,11 +20,12 @@
     justify-content: center;
 }
 
-.question{
-
+.question {
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.answers{
+.answers {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;

@@ -6,7 +6,7 @@ export const test = {
             id: 1,
             questionTitle: "Кто был первым россиянином, удостоенным Нобелевской премии по литературе?",
             type: 'radio',
-            timeLimit: 60,
+            timeLimit: 10,
             answerId: 12,
             answers: [
                 {

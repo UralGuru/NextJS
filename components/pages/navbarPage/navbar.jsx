@@ -5,7 +5,7 @@ const Navbar = () => {
         <div className={styles.arrow}>
             <i className={styles.arrowLeft}/>
         </div>
-        {[...Array(20)].map((e, i) => <div className={styles.box} key={i}>{i + 1}</div>)}
+        {[...Array(5)].map((e, i) => <div className={styles.box} key={i}>{i + 1}</div>)}
     </div>
 };
 
