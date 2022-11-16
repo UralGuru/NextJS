@@ -5,6 +5,7 @@ import Header from "../../components/pages/headerPage/heder";
 import Navbar from "../../components/pages/navbarPage/navbar";
 import {useSelector, useDispatch} from 'react-redux';
 import {useRouter} from "next/router";
+import Tests from "../../components/pages/testsPage/tests";
 
 
 function Test() {
@@ -26,7 +27,9 @@ function Test() {
 
                 <main className={styles.appWrapperContent}>
                     {/*<Question />*/}
-                    {isNaN(questionNum) ? 'Loading...' : <Question question={question[questionNum]}/>}
+                    {isNaN(questionNum)
+                        ? <Tests />
+                        : <Question question={question[questionNum]}/>}
                 </main>
             </div>
         </div>
