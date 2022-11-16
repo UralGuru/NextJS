@@ -6,13 +6,23 @@ import Navbar from "../../components/pages/navbarPage/navbar";
 import {useSelector, useDispatch} from 'react-redux';
 import {useRouter} from "next/router";
 import Tests from "../../components/pages/testsPage/tests";
+import {getTest} from "../api/test";
+import {useEffect} from "react";
+import {setQuestion} from "../../slices/questionSlices";
 
 
-function Test() {
+function Test(props) {
     const question = useSelector((state)=>state.test.questions);
     const router = useRouter();
+    const dispatch = useDispatch();
     const questionNum = !!router.query.index ? router.query.index[0]-1 : NaN
 
+    useEffect(()=>{
+        // console.log(props.res[0]);
+        dispatch(setQuestion(props.res[0]))
+    }, [])
+
+    console.log(question)
 
     return (<div className={styles.appWrapper}>
             <Head>
@@ -36,3 +46,11 @@ function Test() {
     )};
 
 export default Test;
+
+export async function getServerSideProps(context){
+    const {params, query} =context;
+    let res = await getTest(1);
+    delete res[0]._id
+    return {props: {res}}
+}
+

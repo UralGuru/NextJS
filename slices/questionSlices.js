@@ -19,6 +19,10 @@ export const questionSlice = createSlice({
         setTime: (state, action) => {
             // state.time = action.payload;
         },
+        setQuestion: (state, action) => {
+            debugger
+            state.questions = action.payload;
+        },
         decrement: (state, action) => {
             (state.questions[action.payload].timeLimit>=1)
                 ? (state.questions[action.payload].timeLimit -= 1)
@@ -27,5 +31,5 @@ export const questionSlice = createSlice({
     }
 })
 
-export const {setChecked, setTime, decrement} = questionSlice.actions
+export const {setChecked, setTime, decrement, setQuestion} = questionSlice.actions
 export default questionSlice.reducer;
