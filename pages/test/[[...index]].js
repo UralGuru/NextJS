@@ -10,7 +10,6 @@ import {useRouter} from "next/router";
 function Test() {
     const question = useSelector((state)=>state.test.questions);
     const router = useRouter();
-    // console.log(!!router.query.index, (router.query))
     const questionNum = !!router.query.index ? router.query.index[0]-1 : NaN
 
 
