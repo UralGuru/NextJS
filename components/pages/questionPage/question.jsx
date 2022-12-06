@@ -1,8 +1,7 @@
 import RadioBox from "../../buttons/radioButton/RadioBox";
 import s from './question.module.css';
 import {useSelector, useDispatch} from 'react-redux';
-// import {decrement, setTime} from '../../../slices/timerSlices';
-import {setChecked, setTime, decrement} from "../../../slices/questionSlices";
+import {setChecked,  decrement} from "../../../slices/questionSlices";
 import {useEffect} from "react";
 
 function convertSecToMinSec(sec) {
@@ -14,23 +13,17 @@ function convertSecToMinSec(sec) {
 }
 
 function Question({question}) {
-    const totalSeconds = useSelector((state) => state.test.questions[question.id-1].timeLimit);
+    const totalSeconds = useSelector((state) => state.test.questions[question?.id-1]?.timeLimit);
     const time = convertSecToMinSec(totalSeconds);
     const dispatch = useDispatch();
-
-    // console.log(totalSeconds)
-
 
     useEffect(() => {
         const interval = setInterval(() => {dispatch(decrement(question.id-1));}, 1000);
         return ()=> clearInterval(interval)}, [question.id]);
 
-
     return <div className={s.mainContent}>
         <div className={s.timer}>{time}</div>
-
         <div className={s.question}>{question.questionTitle}</div>
-
         <div className={s.answers}>
             {question.answers?.map((a)=>(<div key={a.id} >
                 <RadioBox text={a.answerTitle}

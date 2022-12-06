@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
-import styles from "./radio.module.scss";
+import React from 'react';
 import {useDispatch} from "react-redux";
+import styles from "./radio.module.scss";
+
 
 const RadioBox = ({text, setChecked, id, checked=false, disabled=false, }) => {
-    // const [val, setVal] = useState(checked);
     const dispatch = useDispatch();
-
 
     return <>
         <div className={styles.grid} onClick={() => !disabled && dispatch(setChecked(id))}>

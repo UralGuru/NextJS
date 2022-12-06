@@ -2,7 +2,6 @@ import styles from "./header.module.css";
 
 const Header = () => {
     return <header className={styles.header}>
-
         <div className={styles.headerLeft}>
             <div style={{display: "flex", alignItems: "center", marginRight: '10px'}}>
                 <img src='/question.svg' width={'50px'} alt='question'/>
@@ -13,7 +12,6 @@ const Header = () => {
                 60:00
             </div>
         </div>
-
         <div style={{
             display: "flex",
             alignItems: "center",
@@ -23,9 +21,7 @@ const Header = () => {
         }}>
             РУСЬ И ЗОЛОТАЯ ОРДА
         </div>
-
         <div><img src='/bulb.svg' width={'50px'} alt='bulb'/></div>
-
     </header>
 };
 

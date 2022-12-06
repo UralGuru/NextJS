@@ -20,7 +20,6 @@ export const questionSlice = createSlice({
             // state.time = action.payload;
         },
         setQuestion: (state, action) => {
-            debugger
             state.questions = action.payload;
         },
         decrement: (state, action) => {
