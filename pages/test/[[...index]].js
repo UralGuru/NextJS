@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSelector } from 'react-redux';
 import { useRouter } from "next/router";
 import Head from 'next/head';
@@ -14,10 +13,6 @@ function Test(props) {
     const question = useSelector((state)=>state.test.questions);
     const router = useRouter();
     const questionNum = !!router.query.index ? router.query.index[0]-1 : NaN
-
-    useEffect(()=>{
-        console.log("index", props.res[0]);
-    }, [])
 
     return (<div className={styles.appWrapper}>
             <Head>
