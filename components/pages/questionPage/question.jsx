@@ -4,8 +4,8 @@ import {useSelector, useDispatch} from 'react-redux';
 import {setChecked,  decrement} from "../../../slices/questionSlices";
 import {useEffect} from "react";
 
+//Convert Seconds to Minutes and Seconds
 function convertSecToMinSec(sec) {
-    //Convert Seconds to Minutes and Seconds
     const minutes = Math.floor(sec / 60);
     const seconds = sec % 60;
     const padTo2Digits = (num) => num.toString().padStart(2, '0');

@@ -8,8 +8,7 @@ const Navbar = ({len}) => {
         </div>
         {[...Array(len)].map((e, i) =>
             <Link href={`/test/${i + 1}`} key={i}>
-                <div className={styles.box}
-                     >{i + 1}</div>
+                <div className={styles.box}>{i + 1}</div>
             </Link>)}
     </div>
 };

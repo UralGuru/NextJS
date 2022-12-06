@@ -1,4 +1,4 @@
-import { createSlice, current  } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import {test} from '../data/questionsData'
 
 const initialState = {
@@ -16,9 +16,6 @@ export const questionSlice = createSlice({
                 if (e !== toggleAnswCheckedID) e.checked = false
             }
         },
-        setTime: (state, action) => {
-            // state.time = action.payload;
-        },
         setQuestion: (state, action) => {
             state.questions = action.payload;
         },
@@ -30,5 +27,5 @@ export const questionSlice = createSlice({
     }
 })
 
-export const {setChecked, setTime, decrement, setQuestion} = questionSlice.actions
+export const { setChecked, decrement } = questionSlice.actions
 export default questionSlice.reducer;

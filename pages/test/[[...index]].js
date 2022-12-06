@@ -38,7 +38,6 @@ function Test(props) {
 export default Test;
 
 export async function getServerSideProps(context){
-    const {params, query} =context;
     let res = await getTest(1);
     delete res[0]._id
     return {props: {res}}
