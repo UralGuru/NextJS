@@ -3,6 +3,10 @@ import s from './question.module.css';
 import {useSelector, useDispatch} from 'react-redux';
 import {setChecked,  decrement} from "../../../slices/questionSlices";
 import {useEffect} from "react";
+import PressButton from "../../buttons/pressButton/pressButton";
+import {Router, useRouter} from "next/router";
+import NextPageButton from "../../buttons/nextButton/nextButton";
+import SubmitPageButton from "../../buttons/submitButton/submitButton";
 
 //Convert Seconds to Minutes and Seconds
 function convertSecToMinSec(sec) {
@@ -14,8 +18,12 @@ function convertSecToMinSec(sec) {
 
 function Question({question}) {
     const totalSeconds = useSelector((state) => state.test.questions[question?.id-1]?.timeLimit);
+    const questions = useSelector((state) => state.test.questions);
     const time = convertSecToMinSec(totalSeconds);
     const dispatch = useDispatch();
+    const router = useRouter()
+    const isLastPage = (+router.query.index[0]+1)===(questions.length);
+
 
     useEffect(() => {
         const interval = setInterval(() => {dispatch(decrement(question.id-1));}, 1000);
@@ -33,6 +41,9 @@ function Question({question}) {
                           disabled={a.disabled}/></div>
             ))}
         </div>
+        {!isLastPage && <NextPageButton id={+router.query.index[0]+1} count={questions.length}/>}
+        {isLastPage && <SubmitPageButton />}
+
     </div>
 }
 

@@ -7,9 +7,13 @@ export default function Home() {
             <Head>
                 <title>Quiz</title>
             </Head>
-            <h1>
-                <Link href={"/test"}>HomePage</Link>
-            </h1>
+            <div>
+                <h1 className={styles.title}>
+                    <Link href={"/test"}>Quiz</Link>
+                    <div className={styles.gradient}></div>
+                </h1>
+            </div>
+
         </div>
     )
 };

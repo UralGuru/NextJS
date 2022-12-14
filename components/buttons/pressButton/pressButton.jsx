@@ -1,11 +1,11 @@
 import s from "./pressButton.module.css"
 import Link from "next/link";
 
-function PressButton() {
+function PressButton({link, title}) {
     return <div>
-        <Link href={"/test/1"}>
+        <Link href={link}>
             <div className={s.button}>
-                First test
+                {title}
             </div>
         </Link>
 
