@@ -1,11 +1,21 @@
+@import "./colors.scss";
+
 .appWrapper {
-  display: flex;
   width: 100%;
 }
 
 .title{
   margin: 50px;
+  display: flex;
+  justify-content: center;
 }
+
+.btnStart{
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
 .navbar{
   width: 5%;
   border-right: 1px solid #E0E0E0;

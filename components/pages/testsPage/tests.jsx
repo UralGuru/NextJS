@@ -1,8 +1,8 @@
 import PressButton from "../../buttons/pressButton/pressButton";
 
 function Tests() {
-    return <div>
-        <PressButton link={"/test/1"} title={"Тест 1"}/>
+    return <div style={{marginTop: 50}}>
+        <PressButton link={"/test/1"} title={"Начать"}/>
     </div>
 }
 

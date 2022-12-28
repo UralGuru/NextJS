@@ -3,12 +3,17 @@ import {test} from '../data/questionsData'
 
 const initialState = {
     questions: test.questions,
+    answers: [],
+    trueAnswers: [12, 24, 33, 41, 51]
 };
 
 export const questionSlice = createSlice({
     name: 'questions',
     initialState,
     reducers: {
+        setAnswer:(state, action)=>{
+            state.answers.push(action.payload)
+        },
         setChecked:(state, actions)=>{
             const toggleAnswCheckedID = state.questions[parseInt(actions.payload/10)-1].answers.find((answ)=>answ.id===actions.payload);
             toggleAnswCheckedID.checked = !toggleAnswCheckedID.checked;
@@ -27,5 +32,5 @@ export const questionSlice = createSlice({
     }
 })
 
-export const { setChecked, decrement } = questionSlice.actions
+export const { setChecked, decrement, setAnswer } = questionSlice.actions
 export default questionSlice.reducer;

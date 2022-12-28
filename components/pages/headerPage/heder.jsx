@@ -5,12 +5,12 @@ const Header = () => {
         <div className={styles.headerLeft}>
             <div style={{display: "flex", alignItems: "center", marginRight: '10px'}}>
                 <img src='/question.svg' width={'50px'} alt='question'/>
-                8/20
+                2/5
             </div>
-            <div style={{display: "flex", alignItems: "center"}}>
-                <img src='/clock.svg' width={'50px'} alt='clock'/>
-                60:00
-            </div>
+            {/*<div style={{display: "flex", alignItems: "center"}}>*/}
+            {/*    <img src='/clock.svg' width={'50px'} alt='clock'/>*/}
+            {/*    60:00*/}
+            {/*</div>*/}
         </div>
         <div style={{
             display: "flex",

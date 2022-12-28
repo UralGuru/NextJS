@@ -1,7 +1,7 @@
 import RadioBox from "../../buttons/radioButton/RadioBox";
 import s from './question.module.css';
 import {useSelector, useDispatch} from 'react-redux';
-import {setChecked,  decrement} from "../../../slices/questionSlices";
+import {setChecked,  decrement} from "/slices/questionSlices";
 import {useEffect} from "react";
 import PressButton from "../../buttons/pressButton/pressButton";
 import {Router, useRouter} from "next/router";
@@ -22,7 +22,7 @@ function Question({question}) {
     const time = convertSecToMinSec(totalSeconds);
     const dispatch = useDispatch();
     const router = useRouter()
-    const isLastPage = (+router.query.index[0]+1)===(questions.length);
+    const isLastPage = (+router.query.index[0])===(questions.length);
 
 
     useEffect(() => {
@@ -42,7 +42,7 @@ function Question({question}) {
             ))}
         </div>
         {!isLastPage && <NextPageButton id={+router.query.index[0]+1} count={questions.length}/>}
-        {isLastPage && <SubmitPageButton />}
+        {isLastPage && <SubmitPageButton id={+router.query.index[0]}/>}
 
     </div>
 }

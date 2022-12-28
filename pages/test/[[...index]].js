@@ -10,7 +10,9 @@ import {getTest} from "../api/test";
 
 
 function Test(props) {
+    // console.log(props.res[0])
     const question = useSelector((state) => state.test.questions);
+    // const question = props.res[0];
     const router = useRouter();
     const questionNum = !!router.query.index ? router.query.index[0] - 1 : NaN
 

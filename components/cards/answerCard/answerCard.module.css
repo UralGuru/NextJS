@@ -1,0 +1,33 @@
+.resultItem{
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #00ffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 100%;
+}
+
+.resultItemStart{
+    display: flex;
+    justify-content: space-between;
+}
+
+.resultItemNumber{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin: 0 30px;
+}
+
+.anwTxt{
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.resIcon{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    margin: 0 30px;
+}

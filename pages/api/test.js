@@ -7,7 +7,8 @@ export async function getTest(testId){
 
     try{
         await client.connect()
-        return await client.db("TestDB").collection("test").find().toArray()
+        // return await client.db("TestDB").collection("test").find().toArray()
+        return await client.db("local").collection("tests").find().toArray()
     } catch (e) {
         console.log(e)
     } finally {
